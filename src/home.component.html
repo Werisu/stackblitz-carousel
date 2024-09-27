@@ -1,0 +1,26 @@
+<div class="carousel-container">
+<button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+
+<div class="carousel">
+  <div class="carousel-item" *ngFor="let aluno of alunos">
+    <div class="aluno-card">
+      <img [src]="aluno.imagem" alt="Imagem do Aluno" class="aluno-imagem" />
+      <div class="aluno-info">
+        <h4>{{ aluno.nome }}</h4>
+        <div class="ausencias">
+          <p>Material: {{ aluno.ausencias.material }}</p>
+          <p>Tarefa: {{ aluno.ausencias.tarefa }}</p>
+          <p>Atraso: {{ aluno.ausencias.atraso }}</p>
+        </div>
+        <div class="sala-info">
+          <p>Comportamento: {{ aluno.sala.comportamento }}</p>
+          <p>Participação: {{ aluno.sala.participacao }}</p>
+          <p>Aprendizagem: {{ aluno.sala.aprendizagem }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="next" (click)="moveSlide(1)">&#10095;</button>
+</div>
